@@ -63,108 +63,118 @@
             "tooltip_text": "http://mint-projects.image.ntua.gr/photography/ProvidedCHO/MHF/zbiory.mhf.krakow.pl:MHF 3319/II/28"
           }
         ],
-        "occurence": 126
+        "occurence": 126,
+        "flag": "valid"
       },
       {
         "object_id": "57d93b11cbf72d03def1a28c2",
         "tooltip": [
           {
             "tooltipped_text": "http://mint-project...",
-            "tooltip_text": "http://mint-projects.image.ntua.gr/photography/ProvidedCHO/MHF/zbiory.mhf.krakow.pl:MHF 3319/II/28"
+            "tooltip_text": "http://www.europeana.eu"
           }
         ],
         "occurence": 12,
-        "flag": "SUSPICIOUS"
+        "flag": "suspicious"
       },
       {
         "object_id": "57d93b11cbf72d03def1a28d3",
         "tooltip": [
           {
             "tooltipped_text": "http://mint-proj...",
-            "tooltip_text": "http://mint-projects.image.ntua.gr/photography/ProvidedCHO/MHF/zbiory.mhf.krakow.pl:MHF 3319/II/28"
+            "tooltip_text": "www.bbc.co.uk"
           }
         ],
-        "occurence": 3450
+        "occurence": 3450,
+        "flag": "valid"
       },
       {
         "object_id": "57d93b11cbf72d03def1a28e4",
         "tooltip": [
           {
             "tooltipped_text": "http://mint-proje...",
-            "tooltip_text": "http://mint-projects.image.ntua.gr/photography/ProvidedCHO/MHF/zbiory.mhf.krakow.pl:MHF 3319/II/28"
+            "tooltip_text": "http://cnn.com"
           }
         ],
-        "occurence": 7
+        "occurence": 7,
+        "flag": "suspicious"
       },
       {
         "object_id": "57d93b11cbf72d03def1a28f5",
         "tooltip": [
           {
             "tooltipped_text": "http://mint-project...",
-            "tooltip_text": "http://mint-projects.image.ntua.gr/photography/ProvidedCHO/MHF/zbiory.mhf.krakow.pl:MHF 3319/II/28"
+            "tooltip_text": "http://www.opendefinition.org/licenses/cc-zero"
           }
         ],
-        "occurence": 24
+        "occurence": 24,
+        "flag": "valid"
       },
       {
         "object_id": "57d93b11cbf72d03def1a2906",
         "tooltip": [
           {
             "tooltipped_text": "http://mint-projects.imag...",
-            "tooltip_text": "http://mint-projects.image.ntua.gr/photography/ProvidedCHO/MHF/zbiory.mhf.krakow.pl:MHF 3319/II/28"
+            "tooltip_text": "www.aple.com"
           }
         ],
-        "occurence": 126
+        "occurence": 126,
+        "flag": "valid"
       },
       {
         "object_id": "57d93b11cbf72d03def1a2917",
         "tooltip": [
           {
             "tooltipped_text": "http://mint-pr...",
-            "tooltip_text": "http://mint-projects.image.ntua.gr/photography/ProvidedCHO/MHF/zbiory.mhf.krakow.pl:MHF 3319/II/28"
+            "tooltip_text": "www.cnet.com"
           }
         ],
-        "occurence": 625
+        "occurence": 625,
+        "flag": "invalid"
       },
       {
         "object_id": "57d93b11cbf72d03def1a2928",
         "tooltip": [
           {
             "tooltipped_text": "http://mint-proje...",
-            "tooltip_text": "http://mint-projects.image.ntua.gr/photography/ProvidedCHO/MHF/zbiory.mhf.krakow.pl:MHF 3319/II/28"
+            "tooltip_text": "www.macworld.com"
           }
         ],
-        "occurence": 38
+        "occurence": 38,
+        "flag": "valid"
       },
       {
         "object_id": "57d93b11cbf72d03def1a2939",
         "tooltip": [
           {
             "tooltipped_text": "http://mint-projects.i...",
-            "tooltip_text": "http://mint-projects.image.ntua.gr/photography/ProvidedCHO/MHF/zbiory.mhf.krakow.pl:MHF 3319/II/28"
+            "tooltip_text": "https://dvcs.w3.org/hg/ldpwg/raw-file/default/tests/reports/ldp.html"
           }
         ],
-        "occurence": 29
+        "occurence": 29,
+        "flag": "suspicious"
       },
       {
         "object_id": "57d93b11cbf72d03def1a29410",
         "tooltip": [
           {
             "tooltipped_text": "http://min...",
-            "tooltip_text": "http://mint-projects.image.ntua.gr/photography/ProvidedCHO/MHF/zbiory.mhf.krakow.pl:MHF 3319/II/28"
+            "tooltip_text": "https://dvcs.w3.org/hg/ldpwg/raw-file/default/tests/reports/ldp.html"
           }
         ],
-        "occurence": 2
+        "occurence": 2,
+        "flag": "valid"
       },
       {
         "object_id": "57d93b11cbf72d03def1a29411",
         "tooltip": [
           {
             "tooltipped_text": "http://min...",
-            "tooltip_text": "http://mint-projects.image.ntua.gr/photography/ProvidedCHO/MHF/zbiory.mhf.krakow.pl:MHF 3319/II/28"
+            "tooltip_text": "http://www.bbc.co.uk/sport/football/39149076"
           }
         ],
-        "occurence": 2
+        "occurence": 2,
+        "flag": "valid"
       }
     ]
 }

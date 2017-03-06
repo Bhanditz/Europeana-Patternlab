@@ -4,8 +4,9 @@ define(['jquery', 'mustache', 'smartmenus', 'user_approval'], function ($, Musta
     }
 
     function setFieldValueStatus(id, status){
-    	log('set field value id = ' + id);    	
-    	$('#' + id).removeClass('field_value_valid field_value_invalid field_value_suspicious');   	
+    	console.log('set field value id = ' + id);
+    	$('.card-label, .card-buttons').addClass('field_value_suspicious');
+    	$('#' + id).removeClass('field_value_valid field_value_invalid field_value_suspicious');   
     	switch (status) {
 			case "Valid": 
 				$('#' + id).addClass('field_value_valid'); 
@@ -19,11 +20,16 @@ define(['jquery', 'mustache', 'smartmenus', 'user_approval'], function ($, Musta
 			default:
 				log('switch does not match');
 		}
+
+        var numItems = $('.field_value_invalid').length + $('.field_value_suspicious').length;
+        if (numItems < 10) {
+            $('.card-label, .card-buttons').removeClass('field_value_suspicious');
+        }
     }
     
     function bindTableCellClick(){   	
     	$('.mapping-field .flag').on('click', function(e){
-        	var $cell = $(e.target).closest('.mapping-field')
+        	var $cell = $(e.target).closest('.mapping-field');
     		var cellId = $cell.attr('id');
         	log('show menu for ' + cellId + ' menu length = ' +   ( $('.theme_select')).length  );
         	$('.theme_select').attr('active-cell', cellId);
@@ -35,8 +41,12 @@ define(['jquery', 'mustache', 'smartmenus', 'user_approval'], function ($, Musta
       	  var val = $el.text();
       	  var cellId = $('.theme_select').attr('active-cell');
       	  log('clicked on cell id ' + cellId);
-      	  
+      	  var numItems = $('.field_value_invalid').length + $('.field_value_suspicious').length;
+          if (numItems < 12) {
+              $('.card-label, .card-buttons').removeClass('field_value_suspicious');
+		  }
       	  setFieldValueStatus(cellId, val);
+
       	});
  	
     } 
@@ -112,7 +122,17 @@ define(['jquery', 'mustache', 'smartmenus', 'user_approval'], function ($, Musta
   		  }
   	  });
     }
-    
+
+    function setCardColor() {
+        var lengthCells = $('div[class~="field_value_suspicious"]').length;
+    	log('counting elements');
+    	log(lengthCells);
+        $("div[class^='mapping-card-']").each(function(){
+            console.log($(this).attr('class'));
+        })
+
+	}
+
 	function pageInit() {     
 //    log('typeof pageName ' + (typeof pageName));
 //      
@@ -125,6 +145,12 @@ define(['jquery', 'mustache', 'smartmenus', 'user_approval'], function ($, Musta
       require(['smartmenus'], function() {
           require(['smartmenus_keyboard'], function() {
       	    log('loaded menus');
+
+            var numItems = $('.field_value_invalid').length + $('.field_value_suspicious').length;
+            if(numItems > 0) {
+                  $('.card-label, .card-buttons').addClass('field_value_suspicious');
+            }
+
             $('.nav_primary>ul').smartmenus({
                 mainMenuSubOffsetX: -1,
                 mainMenuSubOffsetY: 4,
@@ -164,7 +190,7 @@ define(['jquery', 'mustache', 'smartmenus', 'user_approval'], function ($, Musta
       if(pageName && pageName == 'itemCard'){
         applyXmlBeautify();    	  
       }
-      
+
     }
 
     function updateOrgList() {
