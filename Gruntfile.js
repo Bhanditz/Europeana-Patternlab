@@ -28,6 +28,7 @@ module.exports = function(grunt) {
       }
     },
     copy: {
+
       /*
       js_assets_enable: {
         files: [{
@@ -43,6 +44,27 @@ module.exports = function(grunt) {
         }]
       },
       */
+
+      test_js_mustache: {
+        cwd:    'public/patterns',
+        src:    ['templates*_JS-*/*.html', '!**/*.escaped.html'],
+        dest:   'public/js/html',
+        expand: true,
+        rename: function(dest, src) {
+
+          console.log(dest + ' / ' + src);
+
+          return dest + '/' + src;
+        }
+      },
+
+      test_js_json: {
+        cwd:    'source/_patterns/templates',
+        src:    ['*_JS/*.json'],
+        dest:   'public/js/html',
+        expand: true
+      },
+
       dev_css: {
         cwd:    'source/css',
         src:    ['**/*.css'],
@@ -113,12 +135,13 @@ module.exports = function(grunt) {
       // Fire the patternlab markup build process
       patternlab_markup: {
         files: ['source/_patterns/**/*.mustache', 'source/_patterns/**/*.json', 'source/_data/*.json'],
-        tasks: ['shell:patternlab_markup']
+        tasks: ['shell:patternlab_markup', 'copy:test_js_mustache', 'copy:test_js_json']
       },
+
       // Fire the patternlab build process
       patternlab_full: {
         files: ['source/js/**/*.js', 'source/images/**/*.{jpg,jpeg,png,gif,svg}'],
-        tasks: ['shell:patternlab_full']
+        tasks: ['shell:patternlab_full', 'copy:test_js_mustache', 'copy:test_js_json']
       },
       //reload the browser
       livereload: {
@@ -341,6 +364,8 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'concat:blacklight',
     'copy:dev_css',
+    'copy:test_js_mustache',
+    'copy:test_js_json',
     'copy:global_dependencies'
   ]);
 }

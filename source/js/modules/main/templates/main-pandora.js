@@ -16,12 +16,15 @@ require.config({
     pandora_home:        '../../eu/pandora/pandora-home',
     pandora_mapping:     '../../eu/pandora/pandora-mapping',
     pandora_register:    '../../eu/pandora/pandora-register',
-    pandora_table:       '../../eu/pandora/pandora-sortable-table',   
+    pandora_table:       '../../eu/pandora/pandora-sortable-table',
     pandora:             '../../eu/pandora/pandora',
     purl:                '../../lib/purl/purl',
     search_form:         '../../eu/search-form',
     smartmenus:          '../../lib/smartmenus/jquery.smartmenus',
     smartmenus_keyboard: '../../lib/smartmenus/keyboard/jquery.smartmenus.keyboard',
+
+    test_js_page:        '../../eu/pandora/test-js-page',
+
     user_approval:       '../../eu/pandora/user-approval-form',
     util_ellipsis:       '../../eu/util/ellipsis',
     util_resize:         '../../eu/util/resize'
