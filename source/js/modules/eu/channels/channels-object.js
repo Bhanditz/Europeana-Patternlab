@@ -353,40 +353,35 @@ define(['jquery', 'util_scrollEvents', 'mustache', 'util_foldable', 'blacklight'
       setZoom();
       $('.media-options').show();
 
-      $('<img style="max-width:400px;">').appendTo('.zoomable').attr('src', uri);
-      resetZoomable();
-      $('.zoomable > img').removeAttr('style');
+      $('<img style="max-width:400px; width:400px;">').appendTo('.zoomable').attr('src', uri);
 
-      if(item.data('natural-width')){
-        updateCtrls();
-      }
-      else{
-        require(['jqImagesLoaded'], function(){
+      require(['jqImagesLoaded'], function(){
 
-          $('body').append('<img id="img-measure" style="display:none;" src="' + uri + '">').imagesLoaded(function(){
+        $('body').append('<img id="img-measure" style="display:none;" src="' + uri + '">').imagesLoaded(function(){
 
-            var tryInit = function(attempt){
-              var nWidth = $('#img-measure')[0].naturalWidth;
+          var tryInit = function(attempt){
+            var nWidth = $('#img-measure')[0].naturalWidth;
 
-              if(nWidth > 0){
-                item.data('natural-width', nWidth);
-                $('#img-measure').remove();
-                updateCtrls();
+            if(nWidth > 0){
+              item.data('natural-width', nWidth);
+              $('#img-measure').remove();
+              updateCtrls();
+              $('.zoomable > img').removeAttr('style');
+              resetZoomable();
+            }
+            else{
+              if(attempt > 5){
+                log('give up on image');
               }
               else{
-                if(attempt > 5){
-                  log('give up on image');
-                }
-                else{
-                  log('retry for image...');
-                  setTimeout(function(){ tryInit(attempt + 1); }, 100);
-                }
+                log('retry for image...');
+                setTimeout(function(){ tryInit(attempt + 1); }, 100);
               }
-            };
-            tryInit(1);
-          });
+            }
+          };
+          tryInit(1);
         });
-      }
+      });
     }
     else if(type == 'iiif'){
 
